@@ -1,17 +1,19 @@
 import { ApolloServer, gql} from "apollo-server-azure-functions";
 import { v4 as uuid } from 'uuid';
 
-const database = { [uuid()] :{"name": "John Doe", "dob": 1988-08-08, "address": "good morning"} };
+const database = { [uuid()] :{"name": "John Doe", "dob": "", "address": "good morning"} };
+
 
 const typeDefs = gql`
     input PersonInput {
         name: String
-        dob: Date
+        dob: String
         address: String  
     }
 
     type Person {
         id: ID!
+        dob: String
         name: String
         address: String
         
@@ -32,7 +34,7 @@ class Person {
 
     id: any;
     name: string;
-    dob: Date;
+    dob: string;
     address: string;
 
     constructor(id: String, {name, dob, address}) {
