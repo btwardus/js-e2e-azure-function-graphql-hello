@@ -55,7 +55,7 @@ const resolvers = {
         },
         updatePerson: (_, {id, input}) => {
             if (!database[id]) {
-                throw new Error('no Person exists with id ' + id);
+                throw new Error('no Person exists with id! ' + id);
             }
             database[id] = input;
             return new Person(id, input);
