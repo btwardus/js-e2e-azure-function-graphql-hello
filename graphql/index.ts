@@ -64,7 +64,7 @@ const resolvers = {
     Query: {
         getPerson: (_, {id}) => {
             if (!database[id]) {
-                throw new Error('no Person exists with id ' + id);
+                throw new Error('no Person exists with id! ' + id);
             }
             return new Person(id, database[id]);
         },
